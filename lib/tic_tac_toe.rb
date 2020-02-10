@@ -88,11 +88,11 @@ class TicTacToe
     return result
   end
   
-  def full
+  def full?
     return @board.all?{|position| position != " "}
   end
   
-  def draw
+  def draw?
     if full == true && won == false
       return true
     else
