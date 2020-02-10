@@ -65,11 +65,11 @@ class TicTacToe
     input = gets.chomp
     valid = valid_move?(input)
     index = input_to_index(input)
-    
     while (valid == false) do
+      puts "Enter a position:"
       input = gets.chomp
+      valid = valid_move?(input)
       index = input_to_index(input)
-      valid = valid_move?(index)
     end
     move(index, current_player)
     display_board
