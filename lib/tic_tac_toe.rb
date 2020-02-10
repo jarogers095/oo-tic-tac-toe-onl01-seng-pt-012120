@@ -75,7 +75,7 @@ class TicTacToe
     display_board
   end
   
-  def won
+  def won?
     result = false
     WIN_COMBINATIONS.each do |combo|
       if combo.all?{|position| position == "X"}
