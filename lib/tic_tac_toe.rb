@@ -93,7 +93,7 @@ class TicTacToe
   end
   
   def draw?
-    if full == true && won == false
+    if full? == true && won? == false
       return true
     else
       return false
@@ -101,7 +101,7 @@ class TicTacToe
   end
   
   def over?
-    if won || draw
+    if won? || draw?
       return true
     else
       return false
@@ -109,15 +109,15 @@ class TicTacToe
   end
   
   def winner
-    return @board[won[0]]
+    return @board[won?[0]]
   end
   
   def play
-    until (over == true) do
+    until (over? == true) do
       turn
     end
     
-    if won
+    if won?
       puts "Congratulations #{winner}"
     else
       puts "Game is a draw!"
