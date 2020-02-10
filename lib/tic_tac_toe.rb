@@ -78,9 +78,9 @@ class TicTacToe
   def won?
     result = false
     WIN_COMBINATIONS.each do |combo|
-      if combo.all?{|position| position == "X"}
+      if combo.all?{|position| @board[position] == "X"}
         result = combo
-      elsif combo.all?{|position| position == "O"}
+      elsif combo.all?{|position| @board[position] == "O"}
         result = combo
       end
     end
