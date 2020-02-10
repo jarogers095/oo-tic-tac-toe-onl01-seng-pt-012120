@@ -35,7 +35,7 @@ class TicTacToe
   end
   
   def valid_move?(index)
-    if !index.is_a?(Integer) || index > 9 || position_taken?(input_to_index(index))
+    if index > 8 || index < 0 || position_taken?(index)
       return false
     else
       return true
@@ -62,15 +62,14 @@ class TicTacToe
   
   def turn
     puts "Enter a position:"
-    input = gets.chomp.to_i
-    puts input
-    valid = valid_move?(input)
+    input = gets.chomp
     index = input_to_index(input)
+    valid = valid_move?(index)
     while (valid == false) do
       puts "Enter a position:"
       input = gets.chomp
-      valid = valid_move?(input)
       index = input_to_index(input)
+      valid = valid_move?(index)
     end
     move(index, current_player)
     display_board
