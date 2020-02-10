@@ -62,7 +62,8 @@ class TicTacToe
   
   def turn
     puts "Enter a position:"
-    input = gets.chomp
+    input = gets.chomp.to_i
+    puts input
     valid = valid_move?(input)
     index = input_to_index(input)
     while (valid == false) do
